@@ -26,6 +26,7 @@ const app = {
         $todoCard.append($todoCheckbox);
         $todoCard.append($todoText);
         $todoCard.append($deleteAct);
+
         $todoContainer.append($todoCard);
 
         $('#todos').append($todoContainer);
@@ -34,9 +35,23 @@ const app = {
     },
     counter: 0
 };
-const deleteList = require("./delete");
+
 
 $(document).ready(app.init);
+
+
+
+
+
+
+
+
+
+
+
+const deleteList = require("./delete");
+
+
 
 },{"./delete":2}],2:[function(require,module,exports){
 // const deleteAct = {
@@ -58,4 +73,5 @@ $(document).ready(app.init);
 // }
 
 module.exports = removeFunct;
+
 },{}]},{},[1]);
