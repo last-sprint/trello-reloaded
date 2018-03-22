@@ -13,8 +13,8 @@
     "js",
     "todoapp",
     "laboratoria"
-  ],
-  "author": "Ivan Medina",
+  ], 
+  "author": "Sirenogirls",
   "license": "ISC",
   "devDependencies": {
     "browserify": "^16.1.1",
