@@ -8,7 +8,7 @@
 </div> */
 
 const app = {
-    init() {
+    init() { 
         $('#todo-form').submit(app.addTodo);
     },
     addTodo(event) {
@@ -17,13 +17,14 @@ const app = {
         
         let todoId = `todo-${app.counter + 1}`;
 
-        const $todoContainer = $('<div />').addClass('col s12 m6 todo');
+        const $todoContainer = $('<div />').addClass('col s12 m6 todo').attr('id','todo-container');
         const $todoCard = $('<div />').addClass('card-panel');
         const $todoCheckbox = $('<input type="checkbox" />').attr('id', todoId);
         const $todoText = $('<label />').attr('for', todoId).text(todo);
-
+        const $deleteAct = $('<button />').addClass('delete').text('x').on('click',deleteList);
         $todoCard.append($todoCheckbox);
         $todoCard.append($todoText);
+        $todoCard.append($deleteAct);
         $todoContainer.append($todoCard);
 
         $('#todos').append($todoContainer);
@@ -32,14 +33,6 @@ const app = {
     },
     counter: 0
 };
+const deleteList = require("./delete");
 
 $(document).ready(app.init);
-
-
-
-
-
-
-
-
-

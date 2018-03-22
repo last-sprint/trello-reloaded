@@ -9,7 +9,7 @@
 </div> */
 
 const app = {
-    init() {
+    init() { 
         $('#todo-form').submit(app.addTodo);
     },
     addTodo(event) {
@@ -18,13 +18,15 @@ const app = {
         
         let todoId = `todo-${app.counter + 1}`;
 
-        const $todoContainer = $('<div />').addClass('col s12 m6 todo');
+        const $todoContainer = $('<div />').addClass('col s12 m6 todo').attr('id','todo-container');
         const $todoCard = $('<div />').addClass('card-panel');
         const $todoCheckbox = $('<input type="checkbox" />').attr('id', todoId);
         const $todoText = $('<label />').attr('for', todoId).text(todo);
-
+        const $deleteAct = $('<button />').addClass('delete').text('x').on('click',deleteList);
         $todoCard.append($todoCheckbox);
         $todoCard.append($todoText);
+        $todoCard.append($deleteAct);
+
         $todoContainer.append($todoCard);
 
         $('#todos').append($todoContainer);
@@ -33,6 +35,7 @@ const app = {
     },
     counter: 0
 };
+
 
 $(document).ready(app.init);
 
@@ -44,5 +47,31 @@ $(document).ready(app.init);
 
 
 
+
+
+const deleteList = require("./delete");
+
+
+
+},{"./delete":2}],2:[function(require,module,exports){
+// const deleteAct = {
+//     init() {
+//         // $('.delete').on('click', 
+//         deleteAct.removeFunct;  
+//         // $('delete').click (deleteAct.removeFunct)
+//     },
+   const removeFunct = (event) => {
+        console.log(event);
+        console.log(event.target);
+        
+        
+        const containerTodo = document.getElementById('todos')
+        const containerList = document.getElementById('todo-container')
+        
+        containerTodo.removeChild(containerList);
+    }
+// }
+
+module.exports = removeFunct;
 
 },{}]},{},[1]);
