@@ -11,6 +11,4 @@ const addColor = {
   
 };
 
-$(document).ready(addColor.init);
-
 module.exports = addColor;
